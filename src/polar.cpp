@@ -11,12 +11,13 @@ Polar::Polar(options_t &options) : options(options)
     this->meta->is_dir = false;
 
     std::cout << "\x1B[2J\x1B[H";
-    std::cout << path << " :: " << port << std::endl;
+    std::cout << port << " :: " << path + "\n" << std::endl;
 }
 
 void Polar::serve(void)
 {
-    std::cerr << "\nto be implemented" << std::endl;
+    std::string type = this->mime.get_mime(this->options.path);
+    std::cerr << "Content-Type: " + type << std::endl;
 }
 
 Polar::~Polar()
