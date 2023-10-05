@@ -1,3 +1,4 @@
+#include <filesystem>
 #include <iostream>
 #include <string>
 #include "include/polar.h"
@@ -20,6 +21,11 @@ int main(int argc, char **argv)
     options_t options;
     options.port = 8080;
     options.path = argv[1];
+
+    if (std::filesystem::is_directory(std::filesystem::path(options.path))) {
+        std::cerr << "directories are not supported yet :(" << std::endl;
+        return 1;
+    }
 
     std::unique_ptr<Polar> polar = std::make_unique<Polar>(options);
 
