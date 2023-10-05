@@ -8,6 +8,7 @@ project(
 sources = files(
   'main.cpp',
   'src/polar.cpp',
+  'src/mime.cpp',
 )
 
 cpp_flags = ['-Wall', '-Wextra']
