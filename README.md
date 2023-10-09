@@ -16,22 +16,30 @@ Polar is a simple HTTP server written in C++.
 git clone https://github.com/Jabolol/polar.git .
 ```
 
-2. Build the project:
+2. Configure the project:
 
 ```sh
-meson setup build && cd build && ninja
+meson setup build
 ```
 
-3. Run the server:
+3. Compile and install the project:
 
 ```sh
-./polar example_dir
+cd build && ninja
+```
+
+4. Run the server:
+
+```sh
+./polar ./example_file
 ```
 
 ## Usage
 
+Currently, `polar` only supports serving files. To serve a file, run:
+
 ```sh
-0.0.1-alpha :: ./polar [file/dir] --port port
+0.0.2-alpha :: ./polar ./path/to/file
 ```
 
 ## License
