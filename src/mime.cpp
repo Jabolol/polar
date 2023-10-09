@@ -361,11 +361,11 @@ std::string Mime::get_mime(std::string &path)
     std::string extension = path.substr(path.find_last_of(".") + 1);
 
     try {
-        std::string mime_type = this->mime_types.at(extension);
+        std::string mime_type = mime_types.at(extension);
         return mime_type;
     } catch (std::out_of_range &_e) {
         std::string message = "unknown extension: " + extension;
         std::cerr << message << std::endl;
-        return this->mime_types["txt"];
+        return mime_types["txt"];
     }
 }
