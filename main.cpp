@@ -5,7 +5,7 @@
 
 int main(int argc, char **argv)
 {
-    std::string VERSION = "0.0.1-alpha";
+    std::string VERSION = "0.0.2-alpha";
 
     if (argc < 2) {
         std::cout << "Usage: polar [file/dir] --port [port]" << std::endl;
