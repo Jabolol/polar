@@ -9,6 +9,7 @@ sources = files(
   'main.cpp',
   'src/polar.cpp',
   'src/mime.cpp',
+  'src/server.cpp',
 )
 
 cpp_flags = ['-Wall', '-Wextra']
