@@ -39,7 +39,7 @@ cd build && ninja
 Currently, `polar` only supports serving files. To serve a file, run:
 
 ```sh
-0.0.2-alpha :: ./polar ./path/to/file
+0.0.3-alpha :: ./polar ./path/to/file
 ```
 
 ## License
