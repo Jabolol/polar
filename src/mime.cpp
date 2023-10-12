@@ -1,5 +1,4 @@
-#include "include/mime.h"
-#include <iostream>
+#include "mime.h"
 #include <stdexcept>
 #include <string>
 
@@ -364,8 +363,6 @@ std::string Mime::get_mime(std::string &path)
         std::string mime_type = mime_types.at(extension);
         return mime_type;
     } catch (std::out_of_range &_e) {
-        std::string message = "unknown extension: " + extension;
-        std::cerr << message << std::endl;
         return mime_types["txt"];
     }
 }
