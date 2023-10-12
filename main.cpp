@@ -1,11 +1,11 @@
 #include <filesystem>
 #include <iostream>
 #include <string>
-#include "include/polar.h"
+#include "polar.h"
 
 int main(int argc, char **argv)
 {
-    std::string VERSION = "0.0.2-alpha";
+    std::string VERSION = "0.0.3-alpha";
 
     if (argc < 2) {
         std::cout << "Usage: polar [file/dir] --port [port]" << std::endl;
@@ -18,18 +18,15 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    options_t options;
-    options.port = 8080;
-    options.path = argv[1];
+    options_t options = {.port = 8080, .path = argv[1]};
 
     if (std::filesystem::is_directory(std::filesystem::path(options.path))) {
         std::cerr << "directories are not supported yet :(" << std::endl;
         return 1;
     }
 
-    std::unique_ptr<Polar> polar = std::make_unique<Polar>(options);
-
-    polar->serve();
+    Polar polar = Polar(options);
+    polar.serve();
 
     return 0;
 }
