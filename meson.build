@@ -10,6 +10,8 @@ sources = files(
   'src/polar.cpp',
   'src/mime.cpp',
   'src/server.cpp',
+  'src/signals.cpp',
+  'src/request.cpp',
 )
 
 cpp_flags = ['-Wall', '-Wextra']
@@ -19,5 +21,6 @@ executable(
   'polar',
   sources,
   include_directories : cpp_include_dirs,
-  install : true
+  cpp_args : cpp_flags,
+  install : true,
 )
