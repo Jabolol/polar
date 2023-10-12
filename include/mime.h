@@ -1,8 +1,8 @@
+#ifndef __MIME_H__
+#define __MIME_H__
+
 #include <map>
 #include <string>
-
-#ifndef __MIME_H__
-    #define __MIME_H__
 
 class Mime {
   private:
