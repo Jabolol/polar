@@ -3,11 +3,11 @@
 #include <csignal>
 #include <cstring>
 #include <iostream>
-#include <memory>
 #include <netinet/in.h>
 #include <string>
 #include <sys/socket.h>
 #include <unistd.h>
+#include <vector>
 #include "request.h"
 #include "signals.h"
 
@@ -36,11 +36,11 @@ void Server::handler(int client_socket)
     socklen_t len_size = sizeof len;
     getsockopt(client_socket, SOL_SOCKET, SO_RCVBUF, &len, &len_size);
 
-    std::shared_ptr<char[]> buffer(new char[len + 1]);
+    std::vector<char> buffer(len + 1);
     buffer[len] = '\0';
-    recv(client_socket, buffer.get(), len, MSG_PEEK);
+    recv(client_socket, buffer.data(), len, MSG_PEEK);
 
-    Request request = Request(buffer.get());
+    Request request = Request(buffer.data());
     std::cout << request.method << " ==> " << request.path << std::endl;
 
     std::string response = build_request();
