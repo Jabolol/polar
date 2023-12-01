@@ -18,7 +18,7 @@ typedef struct {
 class Polar : public Server {
   protected:
     Mime mime;
-    options_t &options;
+    std::unique_ptr<options_t> options;
     std::string get_file_content(void);
     void serve_dir(void);
     void serve_file(void);

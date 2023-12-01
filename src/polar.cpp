@@ -4,10 +4,11 @@
 #include <stdexcept>
 #include <string>
 
-Polar::Polar(options_t &options) : Server(options.port), options(options)
+Polar::Polar(options_t &options) : Server(options.port)
 {
     auto [port, path] = options;
     std::string CLEAR_SEQ = "\x1B[2J\x1B[H";
+    this->options = std::make_unique<options_t>(options);
 
     std::cout << CLEAR_SEQ;
     std::cout << port << " :: " << path + "\n" << std::endl;
@@ -15,7 +16,7 @@ Polar::Polar(options_t &options) : Server(options.port), options(options)
 
 std::string Polar::get_file_content(void)
 {
-    auto [_, path] = options;
+    std::string path = options->path;
     std::ifstream file(path);
 
     try {
@@ -34,7 +35,7 @@ std::string Polar::get_file_content(void)
 std::string Polar::build_request() noexcept
 {
     std::string content = get_file_content();
-    std::string type = mime.get_mime(options.path);
+    std::string type = mime.get_mime(options->path);
 
     return "HTTP/1.1 200 OK\r\nContent-Length:"
         + std::to_string(content.length()) + "\r\nContent-Type: " + type
