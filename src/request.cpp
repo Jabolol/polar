@@ -4,7 +4,7 @@
 #include <string>
 #include <vector>
 
-Request::Request(std::string request)
+Request::Request(const std::string& request)
 {
     if (request.empty()) {
         return;
@@ -30,7 +30,7 @@ Request::Request(std::string request)
     }
 }
 
-std::vector<std::string> Request::split(std::string str, char delim)
+std::vector<std::string> Request::split(const std::string &str, char delim)
 {
     std::string token;
     std::stringstream ss(str);
