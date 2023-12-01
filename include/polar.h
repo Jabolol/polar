@@ -5,15 +5,15 @@
 #include "mime.h"
 #include "server.h"
 
-typedef struct {
+using options_t = struct {
     int port;
     std::string path;
-} options_t;
+};
 
-typedef struct {
+using meta_t = struct {
     bool is_dir;
     std::string path;
-} meta_t;
+};
 
 class Polar : public Server {
   protected:
