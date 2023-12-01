@@ -357,7 +357,7 @@ Mime::Mime(void)
 
 std::string Mime::get_mime(std::string &path)
 {
-    std::string extension = path.substr(path.find_last_of(".") + 1);
+    std::string extension = path.substr(path.find_last_of('.') + 1);
 
     try {
         std::string mime_type = mime_types.at(extension);
