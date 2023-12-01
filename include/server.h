@@ -1,5 +1,5 @@
-#ifndef __SERVER_H__
-#define __SERVER_H__
+#ifndef SERVER_H
+#define SERVER_H
 
 #include <string>
 #include "signals.h"

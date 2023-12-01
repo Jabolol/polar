@@ -1,5 +1,5 @@
-#ifndef __SIGNALS_H__
-#define __SIGNALS_H__
+#ifndef SIGNALS_H
+#define SIGNALS_H
 
 #include <vector>
 

@@ -1,5 +1,5 @@
-#ifndef __MIME_H__
-#define __MIME_H__
+#ifndef MIME_H
+#define MIME_H
 
 #include <map>
 #include <string>

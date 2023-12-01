@@ -1,5 +1,5 @@
-#ifndef __REQUEST_H__
-#define __REQUEST_H__
+#ifndef REQUEST_H
+#define REQUEST_H
 
 #include <string>
 #include <vector>

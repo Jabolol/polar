@@ -1,5 +1,5 @@
-#ifndef __POLAR_H__
-#define __POLAR_H__
+#ifndef POLAR_H
+#define POLAR_H
 
 #include <string>
 #include "mime.h"
